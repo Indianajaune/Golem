@@ -19,6 +19,7 @@ public class MainRunner {
 
         // Only login after all events are registered otherwise some may be missed.
         cli.login();
+        cli.online("/help");
 
     }
 
