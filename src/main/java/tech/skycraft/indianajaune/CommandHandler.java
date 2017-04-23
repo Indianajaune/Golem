@@ -43,7 +43,7 @@ public class CommandHandler {
         AudioSourceManagers.registerLocalSource(playerManager);
 
         // If the IUser that called this is in a voice channel, join them
-        commandMap.put("joinvoice", (event, args) -> {
+        commandMap.put("join", (event, args) -> {
 
             IVoiceChannel userVoiceChannel = event.getAuthor().getVoiceStateForGuild(event.getGuild()).getChannel();
 
@@ -54,7 +54,7 @@ public class CommandHandler {
 
         });
 
-        commandMap.put("leavevoice", (event, args) -> {
+        commandMap.put("leave", (event, args) -> {
 
             IVoiceChannel botVoiceChannel = event.getClient().getOurUser().getVoiceStateForGuild(event.getGuild()).getChannel();
 
@@ -70,7 +70,7 @@ public class CommandHandler {
         });
 
         // Plays the first song found containing the first arg
-        commandMap.put("playsong", (event, args) -> {
+        commandMap.put("play", (event, args) -> {
 
             IVoiceChannel botVoiceChannel = event.getClient().getOurUser().getVoiceStateForGuild(event.getGuild()).getChannel();
 
@@ -88,7 +88,7 @@ public class CommandHandler {
         });
 
         // Skips the current song
-        commandMap.put("skipsong", (event, args) -> {
+        commandMap.put("skip", (event, args) -> {
 
             skipTrack(event.getChannel());
 
@@ -189,10 +189,10 @@ public class CommandHandler {
                     "/player <playername> : request some informations about a minecraft player \n" +
                     "/query <address> : request some informations about a minecraft server \n" +
                     "/wiki <search> : request to the minecraft wiki your search \n" +
-                    "/joinvoice : join the vocal channel you are currently on \n" +
-                    "/leavevoice : leave the voice channel i am currently on" +
-                    "/playsong <song> : search <song> in the internet and automatically plays the first found \n" +
-                    "/skipsong = skip the song currently playing  ```");
+                    "/join : join the vocal channel you are currently on \n" +
+                    "/leave : leave the voice channel i am currently on" +
+                    "/plays <song> : search <song> in the internet and automatically plays the first found \n" +
+                    "/skips = skip the song currently playing  ```");
 
 
         });

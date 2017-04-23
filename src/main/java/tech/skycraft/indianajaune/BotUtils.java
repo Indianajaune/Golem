@@ -22,6 +22,7 @@ class BotUtils {
                 .withRecommendedShardCount()
                 .build();
 
+
     }
 
     // Helper functions to make certain aspects of the bot easier to use.
