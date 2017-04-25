@@ -40,9 +40,9 @@ Fixing and improving current features
 - have to fix that shitty keywords search method in the web for musics
 ```
 
-```
-**TODO :**
 
+**TODO :**
+```
 -RCON server management (randomly crypting RCON password for evident potential security issues)
 -mojang server status display
 ```
