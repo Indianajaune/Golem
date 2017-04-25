@@ -32,13 +32,17 @@ Eclipse:
 
 **WIP :**
 
+```
 Fixing and improving current features
 -have to fix URL parsing with wiki feature (second argument is not used because of the native discord4j method used)
 -have to make return message for /help
 -have to display username history of players in the embed
+- have to fix that shitty keywords search method in the web for musics
+```
 
-
+```
 **TODO :**
 
 -RCON server management (randomly crypting RCON password for evident potential security issues)
 -mojang server status display
+```
