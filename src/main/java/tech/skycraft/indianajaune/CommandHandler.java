@@ -70,7 +70,7 @@ public class CommandHandler {
         });
 
         // Plays the first song found containing the first arg
-        commandMap.put("play", (event, args) -> {
+        commandMap.put("music", (event, args) -> {
 
             IVoiceChannel botVoiceChannel = event.getClient().getOurUser().getVoiceStateForGuild(event.getGuild()).getChannel();
 
@@ -88,7 +88,7 @@ public class CommandHandler {
         });
 
         // Skips the current song
-        commandMap.put("skip", (event, args) -> {
+        commandMap.put("next", (event, args) -> {
 
             skipTrack(event.getChannel());
 
@@ -139,7 +139,7 @@ public class CommandHandler {
 
             LocalDateTime now = LocalDateTime.now();
 
-            System.out.println("skin request at " + now);
+            System.out.println("skin request of" + username + "at " + now);
 
 
 
@@ -185,15 +185,15 @@ public class CommandHandler {
 
 
         commandMap.put("help", (event, args) -> {
-            BotUtils.sendMesasge(event.getChannel(), "```Here is what you can request to me : \n" +
+            BotUtils.sendDM(event.getAuthor(), "```Here is what you can request to me : \n" +
                     "/player <playername> : request some informations about a minecraft player \n" +
                     "/query <address> : request some informations about a minecraft server \n" +
                     "/wiki <search> : request to the minecraft wiki your search \n" +
                     "/join : join the vocal channel you are currently on \n" +
-                    "/leave : leave the voice channel i am currently on" +
-                    "/plays <song> : search <song> in the internet and automatically plays the first found \n" +
-                    "/skips = skip the song currently playing  ```");
-
+                    "/leave : leave the voice channel i am currently on  \n" +
+                    "/music <song> : search <song> in the internet and automatically plays the first found \n" +
+                    "/next = skip the song currently playing  ```");
+            BotUtils.sendMesasge(event.getChannel(), "You received a Private message");
 
         });
 
