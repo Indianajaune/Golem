@@ -25,9 +25,9 @@ Eclipse:
 /query <address> <port> : display some informations about a minecraft server <address> must be either an IP or a domain of a Minecraft server and <port> must be the query port
 /wiki <search> : return an URL to the minecraft wiki with <search>
 /join : join vocal channel
-/play <song> : search on the internet <song> and plays it, can either be an URL or keywords
+/music <song> : search on the internet <song> and plays it, can either be an URL or keywords
 /leave : leave the vocal channel 
-/skip : pass into the next music in the queue or either stop if there is nothing in the queue.
+/next : pass into the next music in the queue or either stop if there is nothing in the queue.
 ```
 
 **WIP :**
