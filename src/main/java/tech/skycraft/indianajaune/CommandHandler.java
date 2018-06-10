@@ -23,6 +23,9 @@ import sx.blah.discord.util.audio.AudioPlayer;
 
 import java.net.URL;
 import java.net.URLEncoder;
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
 
@@ -139,6 +142,10 @@ public class CommandHandler {
 
             LocalDateTime now = LocalDateTime.now();
 
+            LocalDate localDate = now.toLocalDate();
+
+            long millis = System.currentTimeMillis();
+
             System.out.println("skin request of" + username + "at " + now);
 
 
@@ -158,7 +165,7 @@ public class CommandHandler {
             profile.withColor(0, 170, 0);
 
             profile.withTitle(username);
-            profile.withTimestamp(now);
+            profile.withTimestamp(millis);
             profile.withUrl("https://minecraft.net");
             profile.withImage("https://mcapi.ca/skin/" + username);
 
@@ -208,7 +215,7 @@ public class CommandHandler {
     }
 
     private static synchronized GuildMusicManager getGuildAudioPlayer(IGuild guild) {
-        long guildId = Long.parseLong(guild.getID());
+        long guildId = guild.getLongID();
         GuildMusicManager musicManager = musicManagers.get(guildId);
 
         if (musicManager == null) {
