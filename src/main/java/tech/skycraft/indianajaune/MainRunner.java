@@ -1,6 +1,7 @@
 package tech.skycraft.indianajaune;
 
-import sx.blah.discord.api.IDiscordClient;
+import discord4j.core.ClientBuilder;
+import discord4j.core.DiscordClient;
 
 
 public class MainRunner {
@@ -12,10 +13,12 @@ public class MainRunner {
             return;
         }
 
-        IDiscordClient cli = BotUtils.getBuiltDiscordClient(args[0]);
+        new  ClientBuilder(args[0]);
+
+
 
         // Register a listener via the EventSubscriber annotation which allows for organisation and delegation of events
-        cli.getDispatcher().registerListener(new CommandHandler());
+        cli.getDispatcher().on(new CommandHandler());
 
         // Only login after all events are registered otherwise some may be missed.
         cli.login();
